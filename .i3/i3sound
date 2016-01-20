@@ -1,0 +1,18 @@
+#!/bin/bash
+#danielfl
+
+#kill last message
+killall i3-nagbar 
+VOL=`amixer -D pulse sset Master 5%$1|tail -1|cut -c 32-34|tr -d %` 
+
+if [[ $1 = "+" ]] 
+then
+	i3-nagbar -m "Lets rock! Volume: $VOL %" &  
+
+else
+	i3-nagbar -m "Shhhhh...  Volume: $VOL %" &  
+
+fi 
+sleep 2
+killall i3-nagbar
+

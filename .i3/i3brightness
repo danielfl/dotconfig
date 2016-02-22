@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#use: $0 [+|-]
+
+#se der pau
+#sudo chmod 777 /sys/class/backlight/intel_backlight/brightness
+#ou:
+#xrandr --output eDP-1-0 --brightness  0.6
+
+value=`cat /sys/class/backlight/intel_backlight/brightness` 
+
+#if [ $1 = '+' ]
+#then 
+#    value=`expr $value + 100`
+#else
+#    value=`expr $value - 100` 
+#fi
+
+value=`expr $value $1 100` 
+echo $value| tee /sys/class/backlight/intel_backlight/brightness
+

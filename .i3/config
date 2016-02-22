@@ -65,6 +65,10 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+Ctrl+M    exec "~/.i3/i3brightness '+' >  /tmp/log" 
+bindsym $mod+Ctrl+N  exec "~/.i3/i3brightness '-' >  /tmp/log" 
+
+
 
   bindsym $mod+r mode "  "
   mode "  " {
@@ -90,8 +94,10 @@ bindsym $mod+Right focus right
 
   bindsym $mod+Shift+p exec "~/.i3/i3exit"
 
+  bindsym $mod+Shift+m exec "~/.i3/togglemonitor.sh"
+
 # Lock-related bindings
-  bindsym $mod+Shift+x exec "i3lock -b -t -i  ~/wallpapers/bennevis.png"
+  bindsym $mod+Shift+x exec "i3lock -b -t -i  ~/wallpapers/wallpaper2.png"
 
 # Program-Related Bindings
   bindsym $mod+Shift+f exec google-chrome
@@ -134,10 +140,15 @@ bindsym $mod+Right focus right
   exec --no-startup-id compton
 
 # Workspace-Related Bindings
+  bindsym $mod+F1 workspace $workspace1
+  bindsym $mod+F2 workspace $workspace2
+  bindsym $mod+F3 workspace $workspace3
+  bindsym $mod+F4 workspace $workspace4
+
   bindsym $mod+1 workspace $workspace1
   bindsym $mod+2 workspace $workspace2
   bindsym $mod+3 workspace $workspace3
-  bindsym $mod+4 workspace $workspace4
+  bindsym $mod+4 workspace $workspace4 
   bindsym $mod+5 workspace $workspace5
   bindsym $mod+6 workspace $workspace6
   bindsym $mod+7 workspace $workspace7
@@ -183,6 +194,9 @@ bindsym $mod+Right focus right
   for_window [class="Pavucontrol"] floating enable
   for_window [class="Skype"] floating enable
   for_window [class="Yakuake"] floating enable
+#  for_window [class="Firefox"] floating enable
+#  for_window [class="chrome"] floating enable
+
 
 # Widow Colours
 #                         border  background text    indicator

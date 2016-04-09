@@ -1,0 +1,8 @@
+#!/bin/bash
+#danielfl
+
+#kill last message
+killall i3-nagbar 
+VOL=`amixer -D pulse sset Master 10%$1|tail -1|cut -c 32-34|tr -d %` 
+
+

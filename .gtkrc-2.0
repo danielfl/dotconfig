@@ -4,7 +4,7 @@ style "user-font"
     font_name="Oxygen-Sans Sans-Book"
 }
 widget_class "*" style "user-font"
-gtk-font-name="System San Francisco Display 11"
+gtk-font-name="System San Francisco Display 12"
 gtk-theme-name="Orion"
 gtk-icon-theme-name="breeze"
 gtk-fallback-icon-theme="gnome"

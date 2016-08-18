@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEFAULT_OUTPUT='eDP-1-0'
-OUTPUTS='HDMI-1-0'
+DEFAULT_OUTPUT=$(xrandr|egrep  "eDP(-)?1"|awk '{ print $1 }') 
+OUTPUTS=$(xrandr|egrep  "HDMI(-)?1"|awk '{ print $1 }')
 XRANDR=`xrandr`
 EXECUTE="#" 
 CURRENT=$OUTPUTS

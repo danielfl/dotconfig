@@ -1,5 +1,23 @@
 if ping -q -c 1 www.google.com 2>/dev/null >/dev/null ; then
+
  echo " Up" 
+
+ if [ -e /tmp/netdown.pid ]
+ then
+  killall i3-nagbar  >/dev/null 2>/dev/null 
+  rm /tmp/netdown.pid  >/dev/null 2>/dev/null 
+ fi
+
 else 
+
  echo " Down"
+
+ [ -e /tmp/netdown.pid ] && exit
+ if ping -q -c 1 8.8.8.8 2>/dev/null >/dev/null  ;then
+      i3-nagbar -m "Oh no! Your DNS suckz! >(" >/dev/null 2>/dev/null &
+  else
+      i3-nagbar -m "Oh no! Internet Down :("  >/dev/null 2>/dev/null &
+  fi
+  echo $! > /tmp/netdown.pid
+
 fi

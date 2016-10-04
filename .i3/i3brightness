@@ -2,7 +2,7 @@
 
 #use: $0 [+|-]
 
-#se der pau
+#se der pau|something goes wrong
 #sudo chmod 777 /sys/class/backlight/intel_backlight/brightness
 #ou:
 #xrandr --output eDP-1-0 --brightness  0.6
